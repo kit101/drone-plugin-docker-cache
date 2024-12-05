@@ -28,6 +28,9 @@ func (p Plugin) Exec() error {
 	fmt.Printf("Working dir: %s\n", workingDir)
 	if p.Src != "" {
 		err := p.copySrc2StoragePath()
+		if err != nil {
+			return fmt.Errorf("copy src to storage path error: %s", err)
+		}
 		err = p.handleDockerignoreFile()
 		if err != nil {
 			return fmt.Errorf("handle .dockerignore error: %s", err)

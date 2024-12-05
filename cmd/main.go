@@ -10,10 +10,7 @@ import (
 
 var (
 	version = "unknown"
-	usage   = `
-        docker cache plugin.
-		
-	`
+	usage   = `docker data root缓存插件，复制已有docker data root目录到registry path并处理.dockerignore`
 )
 
 func main() {
